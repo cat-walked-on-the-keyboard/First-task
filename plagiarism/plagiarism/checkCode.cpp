@@ -38,9 +38,12 @@ void checkCode::parseCode(ifstream &f)
 	for (; !f.eof();)
 	{
 		getline(f, ans);
-		if (ans != "")
+		if (ans != "") 
+		{
 			code.push_back(ans);
+		}
 	}
+	all_size = 0;
 	for (int j = 0; j < code.size(); ++j)
 	{
 		string s = code[j];
@@ -52,6 +55,7 @@ void checkCode::parseCode(ifstream &f)
 			ans += s[i];
 		}	
 		code[j] = ans;
+		all_size += ans.length();
 	}
 }
 
@@ -62,18 +66,30 @@ checkCode::checkCode(ifstream &a)
 
 double checkCode::plagiarism(checkCode checkVal)
 {
-	pair<int,int> ans1 = LevenshtainDistOfAll(checkVal);
+	pair<int,int> forAns1= LevenshtainDistOfAll(checkVal);
+	int sizeDiff = abs(all_size - checkVal.getSize());
+
+	double ans1;
+	if (forAns1.first == 0)
+		ans1 = 100.0;
+	else
+		ans1 = (double(sizeDiff + 0.99) / (double(forAns1.first) + 1.0) + 1.0 / (double(forAns1.second) + 1.0)) / 2.0*100.0;
 	//TGraph graph1(*this), graph2(checkVal);
 	//double ans2 = compareGraphs(graph1, graph2);
 	//double ans3 = checkHash(code, checkVal);
 
 	//return (ans1 + ans2 + ans3)/3.0;
-	return 0;
+	return ans1;
 }
 
 vector<string> checkCode::getCode()
 {
 	return code;
+}
+
+int checkCode::getSize()
+{
+	return all_size;
 }
 
 

@@ -11,7 +11,7 @@ int main()
 	ifstream f1("codeforces_670_a.cpp");
 	checkCode a(f1);
 	f1.close();
-	f1.open("codeforces_670_a_111.cpp");
+	f1.open("codeforces_670_b.cpp");
 	checkCode b(f1);
 	f1.close();
 	vector<string> aa = a.getCode();
@@ -21,7 +21,7 @@ int main()
 	for (int i = 0; i < bb.size(); ++i)
 		cout << bb[i] << '\n';
 	
-	int x = a.plagiarism(b);
+	cout << a.plagiarism(b) << '\n';;
 	system("pause");
 	
 
