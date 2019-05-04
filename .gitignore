@@ -259,3 +259,15 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/plagiarism/plagiarism/codeforces_673_b.cpp
+/plagiarism/plagiarism/codeforces_673_a.cpp
+/plagiarism/plagiarism/codeforces_672_b.cpp
+/plagiarism/plagiarism/codeforces_672_a.cpp
+/plagiarism/plagiarism/codeforces_671_b1.cpp
+/plagiarism/plagiarism/codeforces_671_b.cpp
+/plagiarism/plagiarism/codeforces_670_d2.cpp
+/plagiarism/plagiarism/codeforces_670_d.cpp
+/plagiarism/plagiarism/codeforces_670_c.cpp
+/plagiarism/plagiarism/codeforces_670_b.cpp
+/plagiarism/plagiarism/codeforces_670_a_111.cpp
+/plagiarism/plagiarism/codeforces_670_a.cpp
